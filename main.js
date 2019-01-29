@@ -5,7 +5,7 @@ let quest = "What do you want to do? Leave or open chest"
 let gameEnd = "GAME OVER"
 let nothing = "You found nothing"
 let monster = "You found a monster. GAME OVER"
-let treasue = "You found treasure. You Win"
+let treasure = "You found treasure. You Win"
 let foundRoom = "You found a room."
 
 //Prompts for dungeon
@@ -31,18 +31,18 @@ if (room == 'leave') {
 
 //Room question 2
 let roomTwo = prompt(quest)
-if (room == "leave") {
+if (roomTwo == "leave") {
     alert(gameEnd);
 } else {
     alert(nothing);
 }
 
 //Room question 3
-let roomThree = prompt(question)
+let roomThree = prompt(quest)
 if (roomThree == "leave"){
     alert(nothing);
 } else {
     alert(treasure);
 }
 
-
+alert(treasure)
