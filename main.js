@@ -21,11 +21,28 @@ if (test == "north") {
     alert(gameEnd);
 }
 
-//Room question
+//Room question 1
 let room = prompt(quest)
 if (room == 'leave') {
     alert(nothing);
 } else {
     alert(monster);
 }
+
+//Room question 2
+let roomTwo = prompt(quest)
+if (room == "leave") {
+    alert(gameEnd);
+} else {
+    alert(nothing);
+}
+
+//Room question 3
+let roomThree = prompt(question)
+if (roomThree == "leave"){
+    alert(nothing);
+} else {
+    alert(treasure);
+}
+
 
