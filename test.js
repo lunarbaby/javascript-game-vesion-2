@@ -12,9 +12,33 @@ para.parentNode.replaceChild(newPara, para);
 let deleteButton = document.querySelector('button');
 deleteButton.remove();
 
-//This add text input
-let hallInput = document.createElement('input');
-hallInput.setAttribute('type', 'text');
-newPara.appendChild(hallInput);
+//This add dropdown menu
+let dropdown = document.createElement('select');
+let optBlank = document.createElement('option');
+let optNorth = document.createElement('option');
+let optSouth = document.createElement('option');
+let optEast = document.createElement('option');
+let optWest = document.createElement('option');
 
+optBlank.value = '1';
+optBlank.text = " ";
+
+optNorth.value = '2';
+optNorth.text = 'North';
+
+optSouth.value = '3';
+optSouth.text = "South";
+
+optEast.value = '4';
+optEast.text = "East";
+
+optWest.value = '5';
+optWest.text = "West";
+
+dropdown.add(optBlank, null);
+dropdown.add(optNorth, null);
+dropdown.add(optSouth, null);
+dropdown.add(optWest, null);
+dropdown.add(optEast, null);
+newPara.appendChild(dropdown);
 }
