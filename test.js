@@ -20,6 +20,7 @@ let optSouth = document.createElement('option');
 let optEast = document.createElement('option');
 let optWest = document.createElement('option');
 
+
 optBlank.value = '1';
 optBlank.text = " ";
 
@@ -41,4 +42,22 @@ dropdown.add(optSouth, null);
 dropdown.add(optWest, null);
 dropdown.add(optEast, null);
 newPara.appendChild(dropdown);
+
+
+// Add logic choice
+// function selectpath(){
+//     let i = document.querySelector('option').value
+//     if (i == '2'){
+//         alert("North");
+//     } else if (i == '3'){
+//         alert("South");
+//     } else if (i == '4'){
+//         alert("East");
+//     } else if (i == '5'){
+//         alert("West");
+//     } else {
+//         alert("Please pick another option.");
+//     }
+// }
+
 }
