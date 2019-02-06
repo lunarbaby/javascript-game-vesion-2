@@ -4,6 +4,10 @@
 
 document.getElementById("mainButton").addEventListener("click", enterMainHall);
 
+//add eventlistener to dropdown
+
+document.getElementById("direct").addEventListener("change", direction(this));
+
 
 //This is the function that represents the main hall
 function enterMainHall() {
@@ -22,27 +26,35 @@ submitButton.innerText = "Submit";
 document.getElementById('direct').removeAttribute("hidden");
 
 // add options to dropdown
-let dropdown = document.getElementById('direct');
-let optBlank = document.createElement('option');
-let optNorth = document.createElement('option');
-let optSouth = document.createElement('option');
-let optEast = document.createElement('option');
-let optWest = document.createElement('option');
+// let dropdown = document.getElementById('direct');
+// let optBlank = document.createElement('option');
+// let optNorth = document.createElement('option');
+// let optSouth = document.createElement('option');
+// let optEast = document.createElement('option');
+// let optWest = document.createElement('option');
 
-optBlank.text = '';
-optNorth.text = 'North';
-optSouth.text = "South";
-optEast.text = "East";
-optWest.text = "West";
+// optBlank.text = '';
+// optNorth.text = 'North';
+// optSouth.text = "South";
+// optEast.text = "East";
+// optWest.text = "West";
 
-dropdown.add(optBlank, null);
-dropdown.add(optNorth, null);
-dropdown.add(optSouth, null);
-dropdown.add(optWest, null);
-dropdown.add(optEast, null);
+// dropdown.add(optBlank, null);
+// dropdown.add(optNorth, null);
+// dropdown.add(optSouth, null);
+// dropdown.add(optWest, null);
+// dropdown.add(optEast, null);
+
+
+
+
 
 }
 
 
-
+//Function to activate choices
+function direction(){
+    let mylist = document.getElementById('direct').value = mylist.options       [mylist.selectedIndex].text;
+    console.log(mylist);
+}
 
