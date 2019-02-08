@@ -4,6 +4,35 @@
 
 document.getElementById("mainButton").addEventListener("click", enterMainHall);
 
+ //A function to reload the page
+    function reloadPage(){
+        location.reload();}
+
+//Function that create directions buttons
+function createChoiceButtons(){
+    let newPara = document.querySelector('p');
+    //Create North Button
+    let northButton = document.createElement('button');
+    northButton.innerText = "north";
+    northButton.setAttribute("id", "northButton");
+    newPara.appendChild(northButton);
+    //Create South Button
+    let southButton = document.createElement('button');
+    southButton.innerText = "south";
+    southButton.setAttribute("id", "southButton");
+    newPara.appendChild(southButton);
+    //Create East Button
+    let eastButton = document.createElement('button');
+    eastButton.innerText = "east";
+    eastButton.setAttribute("id", "eastButton");
+    newPara.appendChild(eastButton);
+    //Create West Button
+    let westButton = document.createElement('button');
+    westButton.setAttribute("id", "westButton");
+    westButton.innerText = "west";
+    newPara.appendChild(westButton);
+    }
+
 //This is the function that represents the main hall
 function enterMainHall() {
 
@@ -18,30 +47,12 @@ function enterMainHall() {
     let deleteButton = document.querySelector('button');
     deleteButton.remove();
 
-    //Create new Buttons
-
-    //North Button
-    let northButton = document.createElement('button');
-    northButton.innerText = "north";
-    newPara.appendChild(northButton);
+    createChoiceButtons();
+   
+   //Add EventListener to buttons
     northButton.addEventListener("click", chooseNorthPath);
-
-    //South Button
-    let southButton = document.createElement('button');
-    southButton.innerText = "south";
-    newPara.appendChild(southButton);
     southButton.addEventListener("click", chooseSouthPath);
-
-    //East Button
-    let eastButton = document.createElement('button');
-    eastButton.innerText = "east";
-    newPara.appendChild(eastButton);
     eastButton.addEventListener("click", chooseEastPath);
-
-    //West Button
-    let westButton = document.createElement('button');
-    westButton.innerText = "west";
-    newPara.appendChild(westButton);
     westButton.addEventListener("click", chooseWestPath);
    
 //Path functions
@@ -80,11 +91,7 @@ function enterMainHall() {
         }    else{
             console.error("function does not work");
         }
-    }
-
-    //A function to reload the page
-    function reloadPage(){
-        location.reload();
+    }   
 }
 
 //Function that runs if you find exit but no treasure
@@ -104,10 +111,7 @@ function escapeRoom(){
     newPara.appendChild(restartButton);
     restartButton.addEventListener("click", reloadPage);
 
-    //A function to reload the page
-    function reloadPage(){
-        location.reload();
-    }
+    
 
 
 }
@@ -129,11 +133,6 @@ function escapeRoom(){
     newPara.appendChild(restartButton);
     restartButton.addEventListener("click", reloadPage);
 
-    //A function to reload the page
-    function reloadPage(){
-        location.reload();
-    }
-    }
 }
 
 //Function that runs to get you in the second hall
@@ -145,38 +144,13 @@ function secondHall(){
     newPara.innerText = "You are now a side hall. The hall spilts off into four different directions. Please pick a direction: North, South, East, or West.";
     para.parentNode.replaceChild(newPara, para);
 
-    //Create new Buttons
+    createChoiceButtons();
 
-    //North Button
-    let northButton = document.createElement('button');
-    northButton.innerText = "north";
-    newPara.appendChild(northButton);
+    //Create EventListeners for directions
     northButton.addEventListener("click", emptyRoom);
-
-    //South Button
-    let southButton = document.createElement('button');
-    southButton.innerText = "south";
-    newPara.appendChild(southButton);
     southButton.addEventListener("click", trapedHall);
-
-    //East Button
-    let eastButton = document.createElement('button');
-    eastButton.innerText = "east";
-    newPara.appendChild(eastButton);
     eastButton.addEventListener("click", thirdHall);
-
-     //West Button
-     let westButton = document.createElement('button');
-     westButton.innerText = "west";
-     newPara.appendChild(westButton);
-     westButton.addEventListener("click", reloadPage);
-
-     //A function to reload the page
-    function reloadPage(){
-        location.reload();
-    }
-
-
+    westButton.addEventListener("click", reloadPage);
 }
 
 // Function that runs when the player pick a hall with an empty room at the end
@@ -196,11 +170,7 @@ function emptyRoom(){
     newPara.appendChild(restartButton);
     restartButton.addEventListener("click", reloadPage);
 
-    //A function to reload the page
-    function reloadPage(){
-        location.reload();
-    }
-}
+  }
 
 //The function that runs when a player pick a hall with the treasure room at the end
 
@@ -228,11 +198,6 @@ function trapedHall(){
     restartButton.innerText = "Restart the game.";
     newPara.appendChild(restartButton);
     restartButton.addEventListener("click", reloadPage);
-
-    //A function to reload the page
-    function reloadPage(){
-        location.reload();
-    }
 }
 
 // Function that runs when the player clicks on the third hall
@@ -244,31 +209,13 @@ function thirdHall(){
     newPara.innerText = "You are in a very narrow and dark hall. The hall spilts off into four different directions. Please pick a direction: North, South, East, or West.";
     para.parentNode.replaceChild(newPara, para);
 
-    //Create new Buttons
+    createChoiceButtons();
 
-    //North Button
-    let northButton = document.createElement('button');
-    northButton.innerText = "north";
-    newPara.appendChild(northButton);
+    //Add EventListener to direction buttons
     northButton.addEventListener("click", poisonRoom);
-    
-    //South Button
-    let southButton = document.createElement('button');
-    southButton.innerText = "south";
-    newPara.appendChild(southButton);
     southButton.addEventListener("click", treasureRoom);
-
-    //East Button
-    let eastButton = document.createElement('button');
-    eastButton.innerText = "east";
-    newPara.appendChild(eastButton);
     eastButton.addEventListener("click", trapedHall);
-
-     //West Button
-     let westButton = document.createElement('button');
-     westButton.innerText = "west";
-     newPara.appendChild(westButton);
-     westButton.addEventListener("click", emptyRoom);
+    westButton.addEventListener("click", emptyRoom);
 
      function poisonRoom(){
     
@@ -285,10 +232,6 @@ function thirdHall(){
         newPara.appendChild(restartButton);
         restartButton.addEventListener("click", reloadPage);
     
-        //A function to reload the page
-        function reloadPage(){
-            location.reload();
-        }
-        }
+         }
     }
 
