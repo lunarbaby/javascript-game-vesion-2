@@ -11,10 +11,8 @@
     function reloadPage(){
         location.reload();}
 
-
 //Function that create directions buttons
     function createChoiceButtons(){
-    
     //Create North Button
     let northButton = document.createElement('button');
     northButton.innerText = "north";
@@ -92,8 +90,7 @@ function escapeRoom(){
 
 //Function that runs if you find a room with a chest with poison in it
 
-    function poisonRoom(){
-    
+function poisonRoom(){
     //This changes the intro paragraph into a new one.
     let para = document.querySelector('p');
     let newPara = document.createElement('p');
@@ -105,7 +102,6 @@ function escapeRoom(){
 }
 
 //Function that runs to get you in the second hall
-
 function secondHall(){
     //This changes the intro paragraph into a new one.
     let para = document.querySelector('p');
@@ -114,7 +110,6 @@ function secondHall(){
     para.parentNode.replaceChild(newPara, para);
 
     deleteButtons();
-
     createChoiceButtons();
 
     //Create EventListeners for directions
@@ -160,7 +155,6 @@ function trapedHall(){
 
     deleteButtons();
     restartButton();
-
 }
 
 // Function that runs when the player clicks on the third hall
@@ -173,7 +167,6 @@ function thirdHall(){
     para.parentNode.replaceChild(newPara, para);
 
     deleteButtons();
-
     createChoiceButtons();
 
     //Add EventListener to direction buttons
