@@ -3,6 +3,7 @@
 let buttonDiv = document.querySelector('.button-div');
 
 
+
 //Add eventlistener to button on the main page
 
 document.getElementById("mainButton").addEventListener("click", enterMainHall);
@@ -37,21 +38,18 @@ function createChoiceButtons(){
     buttonDiv.appendChild(westButton);
     }
 
-    //Function to delete buttons
     function deleteButtons(){
-    let deleteButton1 = document.querySelector("button");
-        deleteButton1.remove();
-    let deleteButton2 = document.querySelector("button");
-        deleteButton2.remove();
-    let deleteButton3 = document.querySelector("button");
-        deleteButton3.remove();
-    let deleteButton4 = document.querySelector("button");
-        deleteButton4.remove();
+        let i = 0;
+        while(i < 4){
+            let deleteButton = document.querySelector("button");
+                deleteButton.remove();
+                i++;
+        }
     }
 
 //This is the function that represents the main hall
 function enterMainHall() {
-
+    
     //This changes the intro paragraph into a new one.
     let para = document.querySelector('p');
     let newPara = document.createElement('p');
