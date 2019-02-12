@@ -65,41 +65,12 @@ function enterMainHall() {
     createChoiceButtons();
    
    //Add EventListener to buttons
-    northButton.addEventListener("click", chooseNorthPath);
-    southButton.addEventListener("click", chooseSouthPath);
-    eastButton.addEventListener("click", chooseEastPath);
-    westButton.addEventListener("click", chooseWestPath);
+    northButton.addEventListener("click", reloadPage);
+    southButton.addEventListener("click", poisonRoom);
+    eastButton.addEventListener("click", escapeRoom);
+    westButton.addEventListener("click", secondHall);
    
-//Path functions
-
-    function chooseNorthPath(){
-        let text = northButton.innerText;
-        if (text == "north"){
-            reloadPage();
-        } 
-    }
-    
-    function chooseSouthPath(){
-        let text = southButton.innerText;
-        if (text == "south"){
-            poisonRoom();
-        }   
-    }
-
-    function chooseEastPath(){
-        let text = eastButton.innerText;
-        if (text == "east"){
-            escapeRoom();
-        }   
-    }
-  
-    function chooseWestPath(){
-        let text = westButton.innerText;
-        if (text == "west"){
-            secondHall();
-        }   
-    }   
-}
+ }
 
 //Function that runs if you find exit but no treasure
 
