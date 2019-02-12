@@ -47,6 +47,14 @@
             }
     }
 
+//This is the function that creates a restart button
+    function restartButton(){
+        let restartButton = document.createElement('button');
+        restartButton.innerText = "Restart the game.";
+        buttonDiv.appendChild(restartButton);
+        restartButton.addEventListener("click", reloadPage);
+    }
+
 //This is the function that represents the main hall
 function enterMainHall() {
     //This changes the intro paragraph into a new one.
@@ -79,13 +87,7 @@ function escapeRoom(){
     para.parentNode.replaceChild(newPara, para);
 
     deleteButtons();
-
-    //Add new button
-
-    let restartButton = document.createElement('button');
-    restartButton.innerText = "Restart the game.";
-    buttonDiv.appendChild(restartButton);
-    restartButton.addEventListener("click", reloadPage);
+    restartButton();
     }
 
 //Function that runs if you find a room with a chest with poison in it
@@ -99,14 +101,7 @@ function escapeRoom(){
     para.parentNode.replaceChild(newPara, para);
 
     deleteButtons();
-
-    //Add new button
-
-    let restartButton = document.createElement('button');
-    restartButton.innerText = "Restart the game.";
-    buttonDiv.appendChild(restartButton);
-    restartButton.addEventListener("click", reloadPage);
-
+    restartButton();
 }
 
 //Function that runs to get you in the second hall
@@ -140,13 +135,7 @@ function emptyRoom(){
     para.parentNode.replaceChild(newPara, para);
 
     deleteButtons();
-
-    //Add new button
-
-    let restartButton = document.createElement('button');
-    restartButton.innerText = "Restart the game.";
-    newPara.appendChild(restartButton);
-    restartButton.addEventListener("click", reloadPage);
+    restartButton();
     }
 
 //The function that runs when a player pick a hall with the treasure room at the end
@@ -170,13 +159,8 @@ function trapedHall(){
     para.parentNode.replaceChild(newPara, para);
 
     deleteButtons();
+    restartButton();
 
-    //Add new button
-
-    let restartButton = document.createElement('button');
-    restartButton.innerText = "Restart the game.";
-    newPara.appendChild(restartButton);
-    restartButton.addEventListener("click", reloadPage);
 }
 
 // Function that runs when the player clicks on the third hall
