@@ -1,20 +1,19 @@
 "use strict";
 
-let buttonDiv = document.querySelector('.button-div');
-
-
+//Global Variables
+    let buttonDiv = document.querySelector('.button-div');
 
 //Add eventlistener to button on the main page
 
-document.getElementById("mainButton").addEventListener("click", enterMainHall);
+    document.getElementById("mainButton").addEventListener("click", enterMainHall);
 
- //A function to reload the page
+//A function to reload the page
     function reloadPage(){
         location.reload();}
 
 
 //Function that create directions buttons
-function createChoiceButtons(){
+    function createChoiceButtons(){
     
     //Create North Button
     let northButton = document.createElement('button');
@@ -38,18 +37,18 @@ function createChoiceButtons(){
     buttonDiv.appendChild(westButton);
     }
 
+//Function that deletes the direction buttons
     function deleteButtons(){
         let i = 0;
         while(i < 4){
             let deleteButton = document.querySelector("button");
                 deleteButton.remove();
                 i++;
-        }
+            }
     }
 
 //This is the function that represents the main hall
 function enterMainHall() {
-    
     //This changes the intro paragraph into a new one.
     let para = document.querySelector('p');
     let newPara = document.createElement('p');
@@ -67,7 +66,6 @@ function enterMainHall() {
     southButton.addEventListener("click", poisonRoom);
     eastButton.addEventListener("click", escapeRoom);
     westButton.addEventListener("click", secondHall);
-   
  }
 
 //Function that runs if you find exit but no treasure
